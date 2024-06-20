@@ -1,15 +1,23 @@
 pipeline {
-    agent any
+    agent {
+        label 'agent-1's
+    }
+    options {
+        timeout(time: 30, unit: 'MINUTES')
+        disableconcorentbuilds()
+    }
     stages {
         stage('Build') {
             steps {
                sh 'echo this is build stage'
+               
             }
         }
         stage('Test') {
             steps {
             
              sh 'echo this is test stage'
+             sh 'sleep 10'
             
             }
         }
