@@ -17,11 +17,16 @@ pipeline {
 
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
+    environment {
+        DEPLOY-TO = 'production'
+       GEETINGS = 'hello devops'
+    }
+// environment variables are key value pairs we can mention here and we can use this environment inside pipeline were ever we want
     stages {
         stage('Build') {
             steps {
                sh 'echo this is build stage'
-               
+               sh 'env'
             }
         }
         stage('Test') {
