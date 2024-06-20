@@ -48,7 +48,7 @@ pipeline {
                 echo "Choice: ${params.CHOICE}"
 
                 echo "Password: ${params.PASSWORD}"
-                echo "trigger testing"
+                echo "trigger testing agian"
             }
         }
     }
